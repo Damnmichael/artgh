@@ -1,103 +1,176 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ChevronRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import FeaturedProducts from "@/components/featured-products";
+import TestimonialSlider from "@/components/testimonial-slider";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage: "url('/images/hero.jpg?height=1080&width=1920')",
+          }}
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="container relative z-20 mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-serif font-light text-white mb-6">
+            Exquisite Artistry
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-8 font-light">
+            Discover unique pieces that transform spaces and inspire emotions
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#c09e80] text-white hover:bg-[#c09e80]/90 rounded-none px-8"
+            >
+              <Link href="/gallery">Explore Collection</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-white text-black hover:bg-white/10 rounded-none px-8"
+            >
+              <a
+                href="https://marketplace.example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Shop Now <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24 bg-stone-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl text-[#c09e80] md:text-4xl font-serif mb-6">
+                Our Artistic Vision
+              </h2>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                We curate exceptional pieces that blend traditional
+                craftsmanship with contemporary aesthetics. Each artwork in our
+                collection is carefully selected for its unique character and
+                artistic merit.
+              </p>
+              <p className="text-gray-700 mb-8 leading-relaxed">
+                Our mission is to connect discerning collectors with
+                extraordinary artists, creating a platform where art transcends
+                mere decoration to become a meaningful part of your life.
+              </p>
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-none border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-white"
+              >
+                <Link href="/about" className="flex items-center ">
+                  Learn More <ChevronRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <div className="relative h-[500px] w-full">
+              <div
+                className="absolute top-0 right-0 w-4/5 h-4/5 bg-cover bg-center border-8 border-white shadow-xl"
+                style={{
+                  backgroundImage:
+                    "url('/images/contour.jpg?height=600&width=800')",
+                }}
+              />
+              <div
+                className="absolute bottom-0 left-0 w-3/5 h-3/5 bg-cover bg-center border-8 border-white shadow-xl"
+                style={{
+                  backgroundImage:
+                    "url('/images/hero.jpg?height=500&width=700')",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#c09e80]">
+              Featured Artworks
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore our curated selection of exceptional pieces that exemplify
+              artistic excellence and creative vision
+            </p>
+          </div>
+          <FeaturedProducts />
+          <div className="text-center mt-12 flex items-center justify-center">
+            <Button
+              variant="outline"
+              className="rounded-none border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-white"
+            >
+              <a
+                href="https://marketplace.example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                View All Collections <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 bg-stone-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#c09e80]">
+              Client Testimonials
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Hear from our clients about their experiences with our art and
+              service
+            </p>
+          </div>
+          <TestimonialSlider />
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-24 bg-[#c09e80] text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif mb-6">
+            Transform Your Space
+          </h2>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
+            Ready to elevate your environment with exceptional art? Visit our
+            marketplace to find the perfect piece.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="bg-white text-black hover:bg-white/90 rounded-none px-10"
+          >
+            <a
+              href="https://marketplace.example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shop Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }
