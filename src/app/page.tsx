@@ -20,7 +20,9 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: "url('/images/hero.jpg?height=1080&width=1920')",
+            backgroundImage:
+              "url('/images/loginart.jpg?height=1080&width=1920')",
+            
           }}
         />
         <motion.div
