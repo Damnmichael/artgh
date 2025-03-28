@@ -61,7 +61,9 @@ export default function ContactPage() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">Contact Us</h1>
+          <h1 className="text-4xl md:text-5xl font-serif mb-4 text-[#c09e80]">
+            Contact Us
+          </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             We'd love to hear from you. Get in touch with our team for inquiries
             about our collection, commissions, or any other questions.
@@ -96,7 +98,7 @@ export default function ContactPage() {
                 </p>
                 <Button
                   onClick={() => setIsSubmitted(false)}
-                  className="bg-black text-white hover:bg-black/80 rounded-none"
+                  className="bg-[#c09e80] text-white hover:bg-[#c09e80]/80 rounded-none"
                 >
                   Send Another Message
                 </Button>
@@ -162,7 +164,7 @@ export default function ContactPage() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-black text-white hover:bg-black/80 rounded-none"
+                  className="w-full bg-[#c09e80] text-white hover:bg-[#c09e80]/80 rounded-none"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
@@ -174,7 +176,9 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-serif mb-6">Get in Touch</h2>
+              <h2 className="text-2xl font-serif mb-6 text-[#c09e80]">
+                Get in Touch
+              </h2>
               <p className="text-gray-600 mb-8">
                 Whether you're looking to purchase a piece, inquire about an
                 artist, or discuss a potential collaboration, our team is here
@@ -182,8 +186,8 @@ export default function ContactPage() {
               </p>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-gray-600 mt-1 mr-3" />
-                  <div>
+                  {/* <MapPin className="h-5 w-5 text-gray-600 mt-1 mr-3" /> */}
+                  {/* <div>
                     <h3 className="font-medium">Visit Us</h3>
                     <p className="text-gray-600">
                       123 Gallery Street
@@ -192,17 +196,17 @@ export default function ContactPage() {
                       <br />
                       New York, NY 10001
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="flex items-start">
-                  <Mail className="h-5 w-5 text-gray-600 mt-1 mr-3" />
+                  <Mail className="h-5 w-5  mt-1 mr-3 text-[#c09e80]" />
                   <div>
                     <h3 className="font-medium">Email Us</h3>
                     <p className="text-gray-600">info@artistrygallery.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Phone className="h-5 w-5 text-gray-600 mt-1 mr-3" />
+                  <Phone className="h-5 w-5  mt-1 mr-3 text-[#c09e80]" />
                   <div>
                     <h3 className="font-medium">Call Us</h3>
                     <p className="text-gray-600">+1 (212) 555-7890</p>
@@ -212,7 +216,9 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-serif mb-6">Gallery Hours</h2>
+              <h2 className="text-2xl font-serif mb-6 text-[#c09e80]">
+                Gallery Hours
+              </h2>
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
@@ -230,7 +236,9 @@ export default function ContactPage() {
             </div>
 
             <div className="pt-6">
-              <h2 className="text-2xl font-serif mb-6">Follow Us</h2>
+              <h2 className="text-2xl font-serif mb-6 text-[#c09e80]">
+                Follow Us
+              </h2>
               <div className="flex space-x-4">
                 <a
                   href="#"

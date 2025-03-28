@@ -49,7 +49,7 @@ export default function Header() {
                 isScrolled || pathname !== "/" ? "text-[#c09e80]" : "text-white"
               }
             >
-              The ArtVaultGh
+           Uzuri
             </span>
           </Link>
 

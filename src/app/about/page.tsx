@@ -10,7 +10,7 @@ export default function AboutPage() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">
+          <h1 className="text-4xl md:text-5xl font-serif mb-4 text-[#c09e80]">
             About Artistry
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -22,7 +22,9 @@ export default function AboutPage() {
         <section className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-serif mb-6">Our Story</h2>
+              <h2 className="text-3xl font-serif mb-6 text-[#c09e80]">
+                Our Story
+              </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Artistry Gallery was founded with a singular vision: to create a
                 space where art transcends mere decoration to become a
@@ -46,7 +48,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[500px] w-full">
               <Image
-                src="/placeholder.svg?height=800&width=600"
+                src="/images/artabout.jpg?height=600&width=500"
                 alt="Artistry Gallery"
                 fill
                 className="object-cover"
@@ -59,7 +61,9 @@ export default function AboutPage() {
         <section className="mb-24 bg-stone-50 py-16">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl font-serif mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-serif mb-6 text-[#c09e80]">
+                Our Mission
+              </h2>
               <p className="text-gray-700 mb-8 leading-relaxed">
                 At Artistry Gallery, our mission is to bridge the gap between
                 exceptional artists and discerning collectors. We strive to
@@ -69,21 +73,27 @@ export default function AboutPage() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="p-6">
-                  <h3 className="text-xl font-serif mb-4">Curate</h3>
+                  <h3 className="text-xl font-serif mb-4 text-[#c09e80]">
+                    Curate
+                  </h3>
                   <p className="text-gray-600">
                     We carefully select artworks that demonstrate exceptional
                     quality, originality, and artistic vision.
                   </p>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-serif mb-4">Connect</h3>
+                  <h3 className="text-xl font-serif mb-4 text-[#c09e80]">
+                    Connect
+                  </h3>
                   <p className="text-gray-600">
                     We create meaningful connections between artists,
                     collectors, and art enthusiasts through our platform.
                   </p>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-serif mb-4">Cultivate</h3>
+                  <h3 className="text-xl font-serif mb-4 text-[#c09e80]">
+                    Cultivate
+                  </h3>
                   <p className="text-gray-600">
                     We nurture artistic growth and appreciation through
                     education, events, and community engagement.
@@ -97,7 +107,9 @@ export default function AboutPage() {
         {/* Team */}
         <section className="mb-24">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif mb-4">Our Team</h2>
+            <h2 className="text-3xl font-serif mb-4 text-[#c09e80]">
+              Our Team
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Meet the passionate individuals behind Artistry Gallery
             </p>
@@ -105,24 +117,24 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Alexandra Chen",
+                name: "R.H.N.A Mettle",
                 title: "Founder & Creative Director",
-                image: "/placeholder.svg?height=400&width=400",
+                image: "/images/ceo.jpg?height=600&width=400",
               },
               {
                 name: "Marcus Johnson",
                 title: "Head Curator",
-                image: "/placeholder.svg?height=400&width=400",
+                image: "/images/ceo2.jpg?height=600&width=400",
               },
               {
                 name: "Sophia Rodriguez",
                 title: "Artist Relations",
-                image: "/placeholder.svg?height=400&width=400",
+                image: "/images/ceo2.jpg?height=600&width=400",
               },
               {
                 name: "David Kim",
                 title: "Gallery Manager",
-                image: "/placeholder.svg?height=400&width=400",
+                image: "/images/ceo2.jpg?height=600&width=400",
               },
             ].map((member, index) => (
               <div key={index} className="text-center">
@@ -142,9 +154,9 @@ export default function AboutPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="bg-black text-white py-16">
+        {/* <section className="bg-[#c09e80] text-white py-16">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-serif mb-6">
+            <h2 className="text-3xl font-serif mb-6 text-white">
               Join Our Artistic Journey
             </h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
@@ -155,7 +167,8 @@ export default function AboutPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-black hover:bg-white/90 rounded-none px-8"
+                variant="outline"
+                className="rounded-none border-[#c09e80]  text-black hover:bg-[#c09e80] hover:text-white"
               >
                 <Link href="/gallery">View Gallery</Link>
               </Button>
@@ -163,7 +176,7 @@ export default function AboutPage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white/10 rounded-none px-8"
+                className="rounded-none border-[#c09e80]  text-black hover:bg-[#c09e80] hover:text-white"
               >
                 <a
                   href="https://marketplace.example.com"
@@ -175,7 +188,7 @@ export default function AboutPage() {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );

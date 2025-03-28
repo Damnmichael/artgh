@@ -18,7 +18,7 @@ const artworks = [
     name: "Abstract Harmony",
     artist: "Elena Moretti",
     price: "$1,200",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "paintings",
   },
   {
@@ -26,7 +26,7 @@ const artworks = [
     name: "Serene Landscape",
     artist: "Thomas Chen",
     price: "$950",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "paintings",
   },
   {
@@ -34,7 +34,7 @@ const artworks = [
     name: "Urban Reflections",
     artist: "Maya Johnson",
     price: "$1,500",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "photography",
   },
   {
@@ -42,7 +42,7 @@ const artworks = [
     name: "Bronze Elegance",
     artist: "Robert Kline",
     price: "$2,800",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "sculptures",
   },
   {
@@ -50,7 +50,7 @@ const artworks = [
     name: "Digital Dreams",
     artist: "Sophia Lee",
     price: "$780",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "digital",
   },
   {
@@ -58,7 +58,7 @@ const artworks = [
     name: "Ethereal Whispers",
     artist: "James Wilson",
     price: "$1,350",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "paintings",
   },
   {
@@ -66,7 +66,7 @@ const artworks = [
     name: "Marble Grace",
     artist: "Olivia Martinez",
     price: "$3,200",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "sculptures",
   },
   {
@@ -74,7 +74,7 @@ const artworks = [
     name: "City Lights",
     artist: "Daniel Kim",
     price: "$1,100",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "photography",
   },
   {
@@ -82,7 +82,7 @@ const artworks = [
     name: "Virtual Reality",
     artist: "Alex Turner",
     price: "$950",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "digital",
   },
   {
@@ -90,7 +90,7 @@ const artworks = [
     name: "Ocean Memories",
     artist: "Natalie Wright",
     price: "$1,450",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "paintings",
   },
   {
@@ -98,7 +98,7 @@ const artworks = [
     name: "Bronze Dancer",
     artist: "Christopher Lee",
     price: "$2,600",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "sculptures",
   },
   {
@@ -106,7 +106,7 @@ const artworks = [
     name: "Neon Futures",
     artist: "Emma Davis",
     price: "$820",
-    image: "/placeholder.svg?height=600&width=500",
+    image: "/images/sampleart.jpg?height=600&width=500",
     category: "digital",
   },
 ];
@@ -117,7 +117,9 @@ export default function GalleryPage() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Gallery</h1>
+          <h1 className="text-4xl  text-[#c09e80] md:text-5xl font-serif mb-4">
+            Our Gallery
+          </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Explore our curated collection of exceptional artworks from talented
             artists around the world
@@ -132,7 +134,7 @@ export default function GalleryPage() {
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
-                  className="data-[state=active]:border-b-2 data-[state=active]:border-black data-[state=active]:rounded-none data-[state=active]:shadow-none px-6 py-3"
+                  className="data-[state=active]:border-b-2 data-[state=active]:border-[#c09e80] data-[state=active]:rounded-none data-[state=active]:shadow-none px-6 py-3"
                 >
                   {category.name}
                 </TabsTrigger>
@@ -165,7 +167,7 @@ export default function GalleryPage() {
 
         {/* Call to Action */}
         <div className="mt-20 text-center">
-          <h2 className="text-2xl md:text-3xl font-serif mb-4">
+          <h2 className="text-2xl md:text-3xl font-serif mb-4 text-[#c09e80]">
             Ready to Add Beauty to Your Space?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
@@ -175,7 +177,8 @@ export default function GalleryPage() {
           <Button
             asChild
             size="lg"
-            className="bg-black text-white hover:bg-black/80 rounded-none px-10"
+            variant="outline"
+            className="rounded-none border-[#c09e80]  text-black hover:bg-[#c09e80] hover:text-white"
           >
             <a
               href="https://marketplace.example.com"
@@ -207,7 +210,7 @@ function ArtworkCard({ artwork }: { artwork: (typeof artworks)[0] }) {
           <Button
             asChild
             variant="outline"
-            className="border-white text-white hover:bg-white hover:text-black rounded-none"
+            className="border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-black rounded-none"
           >
             <a
               href={`https://marketplace.example.com/product/${artwork.id}`}
