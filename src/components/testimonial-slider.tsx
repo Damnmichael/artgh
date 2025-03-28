@@ -43,7 +43,7 @@ const testimonials = [
 ];
 
 export default function TestimonialSlider() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -59,8 +59,6 @@ export default function TestimonialSlider() {
         loop: true,
       }}
       className="w-full max-w-3xl mx-auto"
-      index={activeIndex}
-      onSelect={setActiveIndex}
     >
       <CarouselContent>
         {testimonials.map((testimonial) => (
@@ -68,7 +66,7 @@ export default function TestimonialSlider() {
             <div className="text-center px-4 md:px-8 py-8">
               <Quote className="mx-auto h-10 w-10 text-gray-300 mb-6" />
               <blockquote className="text-xl md:text-2xl font-serif italic mb-6 text-[#c09e80]">
-                "{testimonial.quote}"
+                {testimonial.quote}
               </blockquote>
               <div className="font-medium">{testimonial.author}</div>
               <div className="text-gray-500 text-sm">{testimonial.title}</div>

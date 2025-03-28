@@ -3,7 +3,7 @@
 import type React from "react";
 
 import { useState } from "react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -65,7 +65,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We'd love to hear from you. Get in touch with our team for inquiries
+            We&apos;d love to hear from you. Get in touch with our team for inquiries
             about our collection, commissions, or any other questions.
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-2xl font-serif mb-4">Thank You!</h3>
                 <p className="text-gray-600 mb-6">
-                  Your message has been sent successfully. We'll get back to you
+                  Your message has been sent successfully. We&apos;ll get back to you
                   as soon as possible.
                 </p>
                 <Button
@@ -180,7 +180,7 @@ export default function ContactPage() {
                 Get in Touch
               </h2>
               <p className="text-gray-600 mb-8">
-                Whether you're looking to purchase a piece, inquire about an
+                Whether you&apos;re looking to purchase a piece, inquire about an
                 artist, or discuss a potential collaboration, our team is here
                 to help.
               </p>

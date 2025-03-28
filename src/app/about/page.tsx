@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+
+
+
 
 export default function AboutPage() {
   return (
@@ -28,7 +28,7 @@ export default function AboutPage() {
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Artistry Gallery was founded with a singular vision: to create a
                 space where art transcends mere decoration to become a
-                meaningful part of people's lives. What began as a small gallery
+                meaningful part of people&apos;s lives. What began as a small gallery
                 in a historic downtown building has evolved into a renowned
                 platform for artistic expression and discovery.
               </p>
