@@ -65,7 +65,7 @@ export default function TestimonialSlider() {
           <CarouselItem key={testimonial.id}>
             <div className="text-center px-4 md:px-8 py-8">
               <Quote className="mx-auto h-10 w-10 text-gray-300 mb-6" />
-              <blockquote className="text-xl md:text-2xl font-serif italic mb-6 text-[#c09e80]">
+              <blockquote className="text-xl md:text-2xl font-serif italic mb-6 text-[#E07A5F]">
                 {testimonial.quote}
               </blockquote>
               <div className="font-medium">{testimonial.author}</div>
@@ -75,8 +75,8 @@ export default function TestimonialSlider() {
         ))}
       </CarouselContent>
       <div className="flex justify-center gap-2 mt-6">
-        <CarouselPrevious className="static transform-none rounded-none border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-white" />
-        <CarouselNext className="static transform-none rounded-none border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-white" />
+        <CarouselPrevious className="static transform-none rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white" />
+        <CarouselNext className="static transform-none rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white" />
       </div>
     </Carousel>
   );

@@ -117,7 +117,7 @@ export default function GalleryPage() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl  text-[#c09e80] md:text-5xl font-serif mb-4">
+          <h1 className="text-4xl  text-[#E07A5F] md:text-5xl font-serif mb-4">
             Our Gallery
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -134,7 +134,7 @@ export default function GalleryPage() {
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
-                  className="data-[state=active]:border-b-2 data-[state=active]:border-[#c09e80] data-[state=active]:rounded-none data-[state=active]:shadow-none px-6 py-3"
+                  className="data-[state=active]:border-b-2 data-[state=active]:border-[#E07A5F] data-[state=active]:rounded-none data-[state=active]:shadow-none px-6 py-3"
                 >
                   {category.name}
                 </TabsTrigger>
@@ -167,7 +167,7 @@ export default function GalleryPage() {
 
         {/* Call to Action */}
         <div className="mt-20 text-center">
-          <h2 className="text-2xl md:text-3xl font-serif mb-4 text-[#c09e80]">
+          <h2 className="text-2xl md:text-3xl font-serif mb-4 text-[#E07A5F]">
             Ready to Add Beauty to Your Space?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
@@ -178,7 +178,7 @@ export default function GalleryPage() {
             asChild
             size="lg"
             variant="outline"
-            className="rounded-none border-[#c09e80]  text-black hover:bg-[#c09e80] hover:text-white"
+            className="rounded-none border-[#E07A5F]  text-black hover:bg-[#E07A5F] hover:text-white"
           >
             <a
               href="https://marketplace.example.com"
@@ -198,7 +198,7 @@ function ArtworkCard({ artwork }: { artwork: (typeof artworks)[0] }) {
   return (
     <div className="group">
       <div className="relative overflow-hidden mb-4">
-        <div className="aspect-[3/4] relative">
+        <div className="aspect-[4/4] md:aspect-[3/4] relative">
           <Image
             src={artwork.image || "/placeholder.svg"}
             alt={artwork.name}
@@ -210,7 +210,7 @@ function ArtworkCard({ artwork }: { artwork: (typeof artworks)[0] }) {
           <Button
             asChild
             variant="outline"
-            className="border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-black rounded-none"
+            className="border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-black rounded-none"
           >
             <a
               href={`https://marketplace.example.com/product/${artwork.id}`}
@@ -223,7 +223,7 @@ function ArtworkCard({ artwork }: { artwork: (typeof artworks)[0] }) {
         </div>
       </div>
       <div>
-        <h3 className="font-medium text-lg">{artwork.name}</h3>
+        <h3 className="font-medium text-lg text-[#E07A5F]">{artwork.name}</h3>
         <p className="text-gray-600 text-sm">{artwork.artist}</p>
         <p className="mt-2 font-medium">{artwork.price}</p>
       </div>

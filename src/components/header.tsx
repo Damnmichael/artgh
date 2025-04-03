@@ -4,9 +4,15 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingBag } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -14,6 +20,31 @@ const navigation = [
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
+
+// Add these animation variants near the top of the file, after the navigation const
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { x: 20, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 24,
+    },
+  },
+};
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,10 +77,10 @@ export default function Header() {
           <Link href="/" className="text-2xl font-serif font-medium">
             <span
               className={
-                isScrolled || pathname !== "/" ? "text-[#c09e80]" : "text-white"
+                isScrolled || pathname !== "/" ? "text-[#E07A5F]" : "text-white"
               }
             >
-           Uzuri
+              Uzuri
             </span>
           </Link>
 
@@ -59,7 +90,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-[#c09e80] ${
+                className={`text-sm font-medium transition-colors hover:text-[#E07A5F] ${
                   pathname === item.href
                     ? isScrolled || pathname !== "/"
                       ? "text-primary"
@@ -81,8 +112,8 @@ export default function Header() {
               variant={isScrolled || pathname !== "/" ? "default" : "outline"}
               className={
                 isScrolled || pathname !== "/"
-                  ? "rounded-none bg-[#c09e80] text-white hover:bg-black/80"
-                  : "rounded-none border-white text-black hover:bg-black/10"
+                  ? "rounded-none bg-[#E07A5F] text-white hover:bg-black/80"
+                  : "rounded-none  text-black hover:bg-[#E07A5F] hover:text-white"
               }
             >
               <a
@@ -114,49 +145,57 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-2xl font-serif font-medium">
-                    Artistry
+              <motion.div
+                className="flex flex-col h-full"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div
+                  className="flex items-center justify-between mb-8"
+                  variants={itemVariants}
+                >
+                  <span className="text-2xl font-serif font-medium text-[#E07A5F]">
+                    Uzuri
                   </span>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" aria-label="Close">
-                      <X />
-                    </Button>
-                  </SheetTrigger>
-                </div>
+                </motion.div>
                 <nav className="flex flex-col space-y-6">
                   {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className={`text-lg font-medium transition-colors hover:text-primary ${
-                        pathname === item.href
-                          ? "text-primary"
-                          : "text-gray-600"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
+                    <motion.div key={item.name} variants={itemVariants}>
+                      <SheetClose asChild>
+                        <Link
+                          href={item.href}
+                          className={`text-lg font-medium transition-colors hover:text-primary ${
+                            pathname === item.href
+                              ? "text-[#E07A5F]"
+                              : "text-gray-400"
+                          }`}
+                        >
+                          {item.name}
+                        </Link>
+                      </SheetClose>
+                    </motion.div>
                   ))}
                 </nav>
-                <div className="mt-auto pt-8">
-                  <Button
-                    asChild
-                    className="w-full rounded-none bg-black text-white hover:bg-black/80"
-                  >
-                    <a
-                      href="https://marketplace.example.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center"
+                <motion.div className="mt-auto pt-8" variants={itemVariants}>
+                  <SheetClose asChild>
+                    <Button
+                      asChild
+                      className="w-full rounded-none bg-[#E07A5F] text-white hover:bg-[#E07A5F]/80"
                     >
-                      <ShoppingBag className="mr-2 h-4 w-4" />
-                      Shop Now
-                    </a>
-                  </Button>
-                </div>
-              </div>
+                      <a
+                        href="https://marketplace.example.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center"
+                      >
+                        <ShoppingBag className="mr-2 h-4 w-4" />
+                        Shop Now
+                      </a>
+                    </Button>
+                  </SheetClose>
+                </motion.div>
+              </motion.div>
             </SheetContent>
           </Sheet>
         </div>

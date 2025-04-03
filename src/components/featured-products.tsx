@@ -90,7 +90,7 @@ export default function FeaturedProducts() {
                     onMouseEnter={() => setHoveredId(product.id)}
                     onMouseLeave={() => setHoveredId(null)}
                   >
-                    <div className="aspect-[3/4] relative">
+                    <div className="aspect-[4/4] md:aspect-[3/4] relative">
                       <Image
                         src={product.image || "/placeholder.svg"}
                         alt={product.name}
@@ -106,7 +106,7 @@ export default function FeaturedProducts() {
                       <Button
                         asChild
                         variant="outline"
-                        className="border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-black rounded-none w-full"
+                        className="border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white rounded-none w-full"
                       >
                         <a
                           href={`https://marketplace.example.com/product/${product.id}`}
@@ -123,7 +123,9 @@ export default function FeaturedProducts() {
                     <div className="text-xs text-gray-500 mb-1">
                       {product.category}
                     </div>
-                    <h3 className="font-medium text-lg">{product.name}</h3>
+                    <h3 className="font-medium text-lg text-[#E07A5F]">
+                      {product.name}
+                    </h3>
                     <p className="text-gray-600 text-sm">{product.artist}</p>
                     <p className="mt-2 font-medium">{product.price}</p>
                   </div>
@@ -134,8 +136,8 @@ export default function FeaturedProducts() {
         ))}
       </CarouselContent>
       <div className="flex justify-end gap-2 mt-8">
-        <CarouselPrevious className="static transform-none rounded-none border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-white" />
-        <CarouselNext className="static transform-none rounded-none border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-white" />
+        <CarouselPrevious className="static transform-none rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white" />
+        <CarouselNext className="static transform-none rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white" />
       </div>
     </Carousel>
   );

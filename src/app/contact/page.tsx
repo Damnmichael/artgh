@@ -61,12 +61,12 @@ export default function ContactPage() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4 text-[#c09e80]">
+          <h1 className="text-4xl md:text-5xl font-serif mb-4 text-[#E07A5F]">
             Contact Us
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We&apos;d love to hear from you. Get in touch with our team for inquiries
-            about our collection, commissions, or any other questions.
+            We&apos;d love to hear from you. Get in touch with our team for
+            inquiries about our collection, commissions, or any other questions.
           </p>
         </div>
 
@@ -93,12 +93,12 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-2xl font-serif mb-4">Thank You!</h3>
                 <p className="text-gray-600 mb-6">
-                  Your message has been sent successfully. We&apos;ll get back to you
-                  as soon as possible.
+                  Your message has been sent successfully. We&apos;ll get back
+                  to you as soon as possible.
                 </p>
                 <Button
                   onClick={() => setIsSubmitted(false)}
-                  className="bg-[#c09e80] text-white hover:bg-[#c09e80]/80 rounded-none"
+                  className="bg-[#E07A5F] text-white hover:bg-[#E07A5F]/80 rounded-none"
                 >
                   Send Another Message
                 </Button>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-[#c09e80] text-white hover:bg-[#c09e80]/80 rounded-none"
+                  className="w-full bg-[#E07A5F] text-white hover:bg-[#E07A5F]/80 rounded-none"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
@@ -176,13 +176,13 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-serif mb-6 text-[#c09e80]">
+              <h2 className="text-2xl font-serif mb-6 text-[#E07A5F]">
                 Get in Touch
               </h2>
               <p className="text-gray-600 mb-8">
-                Whether you&apos;re looking to purchase a piece, inquire about an
-                artist, or discuss a potential collaboration, our team is here
-                to help.
+                Whether you&apos;re looking to purchase a piece, inquire about
+                an artist, or discuss a potential collaboration, our team is
+                here to help.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -199,14 +199,14 @@ export default function ContactPage() {
                   </div> */}
                 </div>
                 <div className="flex items-start">
-                  <Mail className="h-5 w-5  mt-1 mr-3 text-[#c09e80]" />
+                  <Mail className="h-5 w-5  mt-1 mr-3 text-[#E07A5F]" />
                   <div>
                     <h3 className="font-medium">Email Us</h3>
                     <p className="text-gray-600">info@artistrygallery.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Phone className="h-5 w-5  mt-1 mr-3 text-[#c09e80]" />
+                    <Phone className="h-5 w-5  mt-1 mr-3 text-[#E07A5F]" />
                   <div>
                     <h3 className="font-medium">Call Us</h3>
                     <p className="text-gray-600">+1 (212) 555-7890</p>
@@ -216,7 +216,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-serif mb-6 text-[#c09e80]">
+              <h2 className="text-2xl font-serif mb-6 text-[#E07A5F]">
                 Gallery Hours
               </h2>
               <div className="space-y-2">
@@ -236,13 +236,13 @@ export default function ContactPage() {
             </div>
 
             <div className="pt-6">
-              <h2 className="text-2xl font-serif mb-6 text-[#c09e80]">
+              <h2 className="text-2xl font-serif mb-6 text-[#E07A5F]">
                 Follow Us
               </h2>
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-black hover:text-black transition-colors"
+                  className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-[#E07A5F] hover:text-[#E07A5F] transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -260,7 +260,7 @@ export default function ContactPage() {
                 </a>
                 <a
                   href="#"
-                  className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-black hover:text-black transition-colors"
+                  className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-[#E07A5F] hover:text-[#E07A5F] transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -287,7 +287,7 @@ export default function ContactPage() {
                 </a>
                 <a
                   href="#"
-                  className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-black hover:text-black transition-colors"
+                  className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-[#E07A5F] hover:text-[#E07A5F] transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

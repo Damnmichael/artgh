@@ -10,8 +10,8 @@ export default function AboutPage() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4 text-[#c09e80]">
-            About Artistry
+          <h1 className="text-4xl md:text-5xl font-serif mb-4 text-[#E07A5F]">
+            About Uzuri
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Connecting exceptional artists with discerning collectors since 2010
@@ -22,15 +22,15 @@ export default function AboutPage() {
         <section className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-serif mb-6 text-[#c09e80]">
+              <h2 className="text-3xl font-serif mb-6 text-[#E07A5F]">
                 Our Story
               </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Artistry Gallery was founded with a singular vision: to create a
                 space where art transcends mere decoration to become a
-                meaningful part of people&apos;s lives. What began as a small gallery
-                in a historic downtown building has evolved into a renowned
-                platform for artistic expression and discovery.
+                meaningful part of people&apos;s lives. What began as a small
+                gallery in a historic downtown building has evolved into a
+                renowned platform for artistic expression and discovery.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Our journey has been guided by a deep appreciation for
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <section className="mb-24 bg-stone-50 py-16">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl font-serif mb-6 text-[#c09e80]">
+              <h2 className="text-3xl font-serif mb-6 text-[#E07A5F]">
                 Our Mission
               </h2>
               <p className="text-gray-700 mb-8 leading-relaxed">
@@ -73,7 +73,7 @@ export default function AboutPage() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="p-6">
-                  <h3 className="text-xl font-serif mb-4 text-[#c09e80]">
+                  <h3 className="text-xl font-serif mb-4 text-[#E07A5F]">
                     Curate
                   </h3>
                   <p className="text-gray-600">
@@ -82,7 +82,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-serif mb-4 text-[#c09e80]">
+                  <h3 className="text-xl font-serif mb-4 text-[#E07A5F]">
                     Connect
                   </h3>
                   <p className="text-gray-600">
@@ -91,7 +91,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-serif mb-4 text-[#c09e80]">
+                  <h3 className="text-xl font-serif mb-4 text-[#E07A5F]">
                     Cultivate
                   </h3>
                   <p className="text-gray-600">
@@ -107,7 +107,7 @@ export default function AboutPage() {
         {/* Team */}
         <section className="mb-24">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif mb-4 text-[#c09e80]">
+            <h2 className="text-3xl font-serif mb-4 text-[#E07A5F]">
               Our Team
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -146,7 +146,7 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-medium">{member.name}</h3>
+                <h3 className="text-xl font-medium text-[#E07A5F]">{member.name}</h3>
                 <p className="text-gray-600">{member.title}</p>
               </div>
             ))}

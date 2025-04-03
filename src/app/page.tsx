@@ -22,7 +22,6 @@ export default function Home() {
           style={{
             backgroundImage:
               "url('/images/loginart.jpg?height=1080&width=1920')",
-            
           }}
         />
         <motion.div
@@ -41,7 +40,7 @@ export default function Home() {
             <Button
               asChild
               size="lg"
-              className="bg-[#c09e80] text-white hover:bg-[#c09e80]/90 rounded-none px-8"
+              className="bg-[#E07A5F] text-white hover:bg-[#E07A5F]/90 rounded-none px-8"
             >
               <Link href="/gallery">Explore Collection</Link>
             </Button>
@@ -49,7 +48,7 @@ export default function Home() {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-black hover:bg-white/10 rounded-none px-8"
+              className="border-white text-black hover:bg-white/10 rounded-none px-8 hover:text-white"
             >
               <a
                 href="https://marketplace.example.com"
@@ -79,7 +78,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="text-3xl text-[#c09e80] md:text-4xl font-serif mb-6">
+              <h2 className="text-3xl text-[#E07A5F] md:text-4xl font-serif mb-6">
                 Our Artistic Vision
               </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
@@ -96,7 +95,7 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="rounded-none border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-white"
+                className="rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white"
               >
                 <Link href="/about" className="flex items-center ">
                   Learn More <ChevronRight className="ml-1 h-4 w-4" />
@@ -108,20 +107,20 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative h-[500px] w-full"
+              className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full"
             >
               <div
-                className="absolute top-0 right-0 w-4/5 h-4/5 bg-cover bg-center border-8 border-white shadow-xl"
+                className="absolute top-0 right-0 w-[70%] sm:w-4/5 h-[70%] sm:h-4/5 bg-cover bg-center border-4 sm:border-8 border-white shadow-xl"
                 style={{
                   backgroundImage:
-                    "url('/images/contour.jpg?height=600&width=800')",
+                    "url('/images/loginart.jpg?height=600&width=800')",
                 }}
               />
               <div
-                className="absolute bottom-0 left-0 w-3/5 h-3/5 bg-cover bg-center border-8 border-white shadow-xl"
+                className="absolute bottom-0 left-0 w-[50%] sm:w-3/5 h-[50%] sm:h-3/5 bg-cover bg-center border-4 sm:border-8 border-white shadow-xl"
                 style={{
                   backgroundImage:
-                    "url('/images/hero.jpg?height=500&width=700')",
+                    "url('/images/sampleart.jpg?height=500&width=700')",
                 }}
               />
             </motion.div>
@@ -139,7 +138,7 @@ export default function Home() {
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#c09e80]">
+            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#E07A5F]">
               Featured Artworks
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -151,7 +150,7 @@ export default function Home() {
           <div className="text-center mt-12 flex items-center justify-center">
             <Button
               variant="outline"
-              className="rounded-none border-[#c09e80] text-black hover:bg-[#c09e80] hover:text-white"
+              className="rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white"
             >
               <a
                 href="https://marketplace.example.com"
@@ -176,7 +175,7 @@ export default function Home() {
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#c09e80]">
+            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#E07A5F]">
               Client Testimonials
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -194,7 +193,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-24 bg-[#c09e80] text-white"
+        className="py-24 bg-[#E07A5F] text-white"
       >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-serif mb-6">
