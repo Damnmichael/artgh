@@ -74,9 +74,29 @@ export default function TestimonialSlider() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="flex justify-center gap-2 mt-6">
-        <CarouselPrevious className="static transform-none rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white" />
-        <CarouselNext className="static transform-none rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white" />
+       {/* <div className="flex justify-center gap-2 mt-6">
+        <CarouselPrevious className="static transform-none rounded-none border-[#E07A5F] 
+        text-black hover:bg-[#E07A5F] hover:text-white" />
+        <CarouselNext className="static transform-none rounded-none border-[#E07A5F] text-black 
+        hover:bg-[#E07A5F] hover:text-white" />
+      </div> */}
+      <div className="flex justify-center items-center gap-2 mt-6">
+        <span className="text-sm text-gray-500">Swipe to see more</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-gray-500"
+        >
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
       </div>
     </Carousel>
   );
