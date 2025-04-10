@@ -9,16 +9,16 @@ import { Button } from "@/components/ui/button";
 const products = [
   {
     id: 1,
-    name: "Nala DIY Table",
-    price: "GH₵1,103.00",
+    name: "Rae's Painting",
+    price: "GH₵300.00",
     image: "/images/sampleart.jpg",
     hasOptions: true,
-    category: "Furniture",
+    category: "Canvas",
   },
   {
     id: 2,
-    name: "Naana DIY Table",
-    price: "GH₵1,005.00",
+    name: "Open Space Bed",
+    price: "GH₵5,000.00",
     image: "/images/bedding.png",
     hasOptions: true,
     category: "Bedding",
@@ -33,16 +33,16 @@ const products = [
   },
   {
     id: 4,
-    name: "Zendaya Bed Frame",
-    price: "From GH₵3,899.00",
+    name: "Morning Plant",
+    price: "From GH₵700.00",
     image: "/images/plants.png",
     hasOptions: true,
     category: "Plants",
   },
   {
     id: 5,
-    name: "Tos Book Shelf",
-    price: "GH₵1,877.00",
+    name: "Cloudy Mirror",
+    price: "GH₵350.00",
     image: "/images/mirrors.png",
     hasOptions: false,
     category: "Decor",
@@ -74,9 +74,9 @@ export default function FeaturedProducts() {
 
           <div className="space-y-2">
             <div className="flex items-center justify-between gap-2">
-              <h3 className="text-base font-medium text-gray-900 truncate">
+              <div className="text-base font-medium text-gray-900 truncate">
                 {product.name}
-              </h3>
+              </div>
               <span
                 className={`
                 whitespace-nowrap px-2.5 py-1 text-xs font-medium rounded-full

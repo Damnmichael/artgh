@@ -14,10 +14,10 @@ const ARView = dynamic(() => import("@/components/ar-view"), { ssr: false });
 const products = [
   {
     id: 1,
-    name: "Nala DIY Table",
-    price: "GH₵1,103.00",
+    name: "Rae's Painting",
+    price: "GH₵300.00",
     image: "/images/sampleart.jpg",
-    category: "Furniture",
+    category: "Canvas",
     description:
       "A versatile DIY table that combines modern aesthetics with practical functionality. Perfect for both work and dining spaces.",
     details: [
@@ -37,8 +37,8 @@ const products = [
   },
   {
     id: 2,
-    name: "Naana DIY Table",
-    price: "GH₵1,103.00",
+    name: "Open Space Bed",
+    price: "GH₵5,000.00",
     image: "/images/bedding.png",
     category: "Bedding",
     description:
@@ -63,6 +63,52 @@ const products = [
     name: "Zuri Chair",
     price: "GH₵1,103.00",
     image: "/images/chair.png",
+    category: "Furniture",
+    description:
+      "A versatile DIY table that combines modern aesthetics with practical functionality. Perfect for both work and dining spaces.",
+    details: [
+      "Dimensions: 120cm x 75cm x 73cm",
+      "Material: Premium engineered wood with solid oak legs",
+      "Assembly time: 30-45 minutes",
+      "Weight capacity: 80kg",
+      "Available in multiple finishes",
+    ],
+    features: [
+      "Easy tool-free assembly",
+      "Scratch-resistant surface",
+      "Adjustable feet for stability",
+      "Cable management solutions",
+      "Environmental-friendly materials",
+    ],
+  },
+  {
+    id: 4,
+    name: "Morning Plant",
+    price: "GH₵700.00",
+    image: "/images/plants.png",
+    category: "Furniture",
+    description:
+      "A versatile DIY table that combines modern aesthetics with practical functionality. Perfect for both work and dining spaces.",
+    details: [
+      "Dimensions: 120cm x 75cm x 73cm",
+      "Material: Premium engineered wood with solid oak legs",
+      "Assembly time: 30-45 minutes",
+      "Weight capacity: 80kg",
+      "Available in multiple finishes",
+    ],
+    features: [
+      "Easy tool-free assembly",
+      "Scratch-resistant surface",
+      "Adjustable feet for stability",
+      "Cable management solutions",
+      "Environmental-friendly materials",
+    ],
+  },
+  {
+    id: 5,
+    name: "Cloudy Mirror",
+    price: "GH₵350.00",
+    image: "/images/mirrors.png",
     category: "Furniture",
     description:
       "A versatile DIY table that combines modern aesthetics with practical functionality. Perfect for both work and dining spaces.",

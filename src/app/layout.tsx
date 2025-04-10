@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter, Dancing_Script } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/header";
@@ -8,14 +8,15 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
 
-const inter = Inter({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
 });
 
-const dancingScript = Dancing_Script({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-serif",
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${dancingScript.variable} font-sans`}>
+      <body
+        className={`${instrumentSerif.className} ${instrumentSans.className} font-sans`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
