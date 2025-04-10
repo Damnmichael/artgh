@@ -2,143 +2,105 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { ArrowRight } from "lucide-react";
 
 const products = [
   {
     id: 1,
-    name: "Abstract Harmony",
-    artist: "Elena Moretti",
-    price: "$1,200",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Painting",
+    name: "Nala DIY Table",
+    price: "GH₵1,103.00",
+    image: "/images/sampleart.jpg",
+    hasOptions: true,
+    category: "Furniture",
   },
   {
     id: 2,
-    name: "Serene Landscape",
-    artist: "Thomas Chen",
-    price: "$950",
-    image: "/images/samplesculpture.jpg?height=600&width=500",
-    category: "Painting",
+    name: "Naana DIY Table",
+    price: "GH₵1,005.00",
+    image: "/images/bedding.png",
+    hasOptions: true,
+    category: "Bedding",
   },
   {
     id: 3,
-    name: "Urban Reflections",
-    artist: "Maya Johnson",
-    price: "$1,500",
-    image: "/images/loginart.jpg?height=600&width=500",
-    category: "Photography",
+    name: "Zuri Chair",
+    price: "GH₵1,433.00",
+    image: "/images/chair.png",
+    hasOptions: false,
+    category: "Furniture",
   },
   {
     id: 4,
-    name: "Bronze Elegance",
-    artist: "Robert Kline",
-    price: "$2,800",
-    image: "/images/contour.jpg?height=600&width=500",
-    category: "Sculpture",
+    name: "Zendaya Bed Frame",
+    price: "From GH₵3,899.00",
+    image: "/images/plants.png",
+    hasOptions: true,
+    category: "Plants",
   },
   {
     id: 5,
-    name: "Digital Dreams",
-    artist: "Sophia Lee",
-    price: "$780",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Digital Art",
-  },
-  {
-    id: 6,
-    name: "Ethereal Whispers",
-    artist: "James Wilson",
-    price: "$1,350",
-    image: "/images/hero.jpg?height=600&width=500",
-    category: "Mixed Media",
+    name: "Tos Book Shelf",
+    price: "GH₵1,877.00",
+    image: "/images/mirrors.png",
+    hasOptions: false,
+    category: "Decor",
   },
 ];
 
-export default function FeaturedProducts() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
+// Define category colors
+const categoryColors: { [key: string]: string } = {
+  Furniture: "bg-[#F4F1DE] text-[#3D405B]",
+  Bedding: "bg-[#F2CC8F] text-[#3D405B]",
+  Plants: "bg-[#81B29A] text-white",
+  Decor: "bg-[#E07A5F] text-white",
+  Canvas: "bg-[#3D405B] text-white",
+};
 
+export default function FeaturedProducts() {
   return (
-    <Carousel
-      opts={{
-        align: "start",
-        loop: true,
-      }}
-      className="w-full"
-    >
-      <CarouselContent>
-        {products.map((product) => (
-          <CarouselItem
-            key={product.id}
-            className="md:basis-1/2 lg:basis-1/3 pl-4"
-          >
-            <div className="p-1">
-              <Card className="border-none rounded-none overflow-hidden">
-                <CardContent className="p-0">
-                  <div
-                    className="relative overflow-hidden group"
-                    onMouseEnter={() => setHoveredId(product.id)}
-                    onMouseLeave={() => setHoveredId(null)}
-                  >
-                    <div className="aspect-[4/4] md:aspect-[3/4] relative">
-                      <Image
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <div
-                      className={`absolute inset-0 bg-black/60 flex flex-col justify-end p-6 transition-opacity duration-300 ${
-                        hoveredId === product.id ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white rounded-none w-full"
-                      >
-                        <a
-                          href={`https://marketplace.example.com/product/${product.id}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center"
-                        >
-                          View Details <ArrowRight className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <div className="text-xs text-gray-500 mb-1">
-                      {product.category}
-                    </div>
-                    <h3 className="font-medium text-lg text-[#E07A5F]">
-                      {product.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm">{product.artist}</p>
-                    <p className="mt-2 font-medium">{product.price}</p>
-                  </div>
-                </CardContent>
-              </Card>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8">
+      {products.map((product) => (
+        <div key={product.id} className="flex flex-col bg-white p-4">
+          <div className="relative aspect-square bg-white mb-4 group">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <div className="flex items-center justify-between gap-2">
+              <h3 className="text-base font-medium text-gray-900 truncate">
+                {product.name}
+              </h3>
+              <span
+                className={`
+                whitespace-nowrap px-2.5 py-1 text-xs font-medium rounded-full
+                ${categoryColors[product.category]}
+              `}
+              >
+                {product.category}
+              </span>
             </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <div className="flex justify-end gap-2 mt-8">
-        <CarouselPrevious className="static transform-none rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white" />
-        <CarouselNext className="static transform-none rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white" />
-      </div>
-    </Carousel>
+            <p className="text-sm text-gray-900">{product.price}</p>
+
+            <Link href={`/product/${product.id}`}>
+              <Button
+                variant="outline"
+                className="w-full rounded-none border-black/30 text-black hover:border-2 hover:text-black"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  View Details
+                </span>
+              </Button>
+            </Link>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }

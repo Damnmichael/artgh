@@ -31,7 +31,7 @@ export default function Home() {
           className="container relative z-20 mx-auto px-4 text-center"
         >
           <h1 className="text-4xl md:text-6xl font-serif font-light text-white mb-6">
-            Exquisite Artistry
+            Welcome To The Uzuri Space
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-8 font-light">
             Discover unique pieces that transform spaces and inspire emotions
@@ -40,7 +40,8 @@ export default function Home() {
             <Button
               asChild
               size="lg"
-              className="bg-[#E07A5F] text-white hover:bg-[#E07A5F]/90 rounded-none px-8"
+              className=" text-white rounded-none px-8 bg-white/10  hover:bg-white/10 hover:text-white hover:border-2"
+              variant="outline"
             >
               <Link href="/gallery">Explore Collection</Link>
             </Button>
@@ -48,7 +49,7 @@ export default function Home() {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-black hover:bg-white/10 rounded-none px-8 hover:text-white"
+              className="text-white rounded-none px-8 bg-white/10  hover:bg-white/10 hover:text-white hover:border-2"
             >
               <a
                 href="https://marketplace.example.com"
@@ -68,9 +69,9 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-24 bg-stone-50"
+        className="py-24 bg-white"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -95,7 +96,7 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white"
+                className="rounded-none border-black/30 text-black hover:border-2 hover:text-black"
               >
                 <Link href="/about" className="flex items-center ">
                   Learn More <ChevronRight className="ml-1 h-4 w-4" />
@@ -134,7 +135,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-24"
+        className="py-24 bg-stone-50"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -150,7 +151,7 @@ export default function Home() {
           <div className="text-center mt-12 flex items-center justify-center">
             <Button
               variant="outline"
-              className="rounded-none border-[#E07A5F] text-black hover:bg-[#E07A5F] hover:text-white"
+              className="rounded-none border-black/30 text-black hover:border-2 hover:text-black"
             >
               <a
                 href="https://marketplace.example.com"
@@ -171,7 +172,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-24 bg-stone-100"
+        className="py-24 bg-white"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -193,7 +194,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-24 bg-[#E07A5F] text-white"
+        className="py-24 bg-[#B3614C] text-white"
       >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-serif mb-6">

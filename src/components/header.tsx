@@ -109,11 +109,11 @@ export default function Header() {
           <div className="hidden md:block">
             <Button
               asChild
-              variant={isScrolled || pathname !== "/" ? "default" : "outline"}
+              variant={isScrolled || pathname !== "/" ? "outline" : "outline"}
               className={
                 isScrolled || pathname !== "/"
-                  ? "rounded-none bg-[#E07A5F] text-white hover:bg-black/80"
-                  : "rounded-none  text-black hover:bg-[#E07A5F] hover:text-white"
+                  ? "text-black rounded-none px-8 border-black/30  hover:bg-white/10 hover:text-black hover:border-2"
+                  : "text-white rounded-none px-8 bg-white/10  hover:bg-white/10 hover:text-white hover:border-2"
               }
             >
               <a
@@ -181,7 +181,7 @@ export default function Header() {
                   <SheetClose asChild>
                     <Button
                       asChild
-                      className="w-full rounded-none bg-[#E07A5F] text-white hover:bg-[#E07A5F]/80"
+                      className="w-full rounded-none bg-[#E07A5F] text-white hover:bg-[#E07A5F]/80 "
                     >
                       <a
                         href="https://marketplace.example.com"
