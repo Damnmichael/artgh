@@ -16,29 +16,29 @@ const testimonials = [
     id: 1,
     quote:
       "The artwork I purchased has completely transformed my living space. The quality and craftsmanship exceeded my expectations.",
-    author: "Sarah Johnson",
-    title: "Art Collector",
+    author: "Michael",
+    title: "Art Lover",
   },
   {
     id: 2,
     quote:
-      "I've been collecting art for over a decade, and the pieces from Artistry Gallery stand out for their uniqueness and emotional depth.",
-    author: "Michael Chen",
-    title: "Interior Designer",
+      "The bed i got from uzuri is soo comfy and the design is amazing. I love it",
+    author: "Michael",
+    title: "Interior Lover",
   },
   {
     id: 3,
     quote:
-      "Working with Artistry Gallery to find the perfect statement piece for my client's home was a seamless experience. Their curation is impeccable.",
-    author: "Emma Rodriguez",
-    title: "Interior Designer",
+      "The plant is making my room look soo nice and the price is just right.",
+    author: "Kofi",
+    title: "Plant Lover",
   },
   {
     id: 4,
     quote:
-      "The digital art collection is innovative and thought-provoking. I appreciate how Artistry Gallery embraces both traditional and contemporary mediums.",
-    author: "David Thompson",
-    title: "Tech Executive",
+      "Uzuri keeps reminding me of how pretty i look every morning because of the mirror i got from them. I love it",
+    author: "Rae",
+    title: "Architect",
   },
 ];
 
