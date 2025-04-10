@@ -5,6 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import dynamic from "next/dynamic";
+
+// Add AR View with dynamic import (to avoid SSR issues with Three.js)
+const ARView = dynamic(() => import("@/components/ar-view"), { ssr: false });
 
 // This would typically come from an API or database
 const products = [
@@ -287,61 +291,14 @@ export default function ProductPage({
 
       {/* Camera View Modal */}
       {showCamera && (
-        <div className="fixed inset-0 bg-black z-50">
-          <div className="relative h-full">
-            <video
-              ref={videoRef}
-              autoPlay
-              playsInline
-              muted // Add muted to ensure autoplay works
-              className="h-full w-full object-cover"
-              onError={(e) => {
-                console.error("Video error:", e);
-                setCameraError("Error displaying camera feed");
-                stopCamera();
-              }}
-            />
-
-            {/* Loading indicator */}
-            <div
-              className="absolute inset-0 flex items-center justify-center bg-black/50"
-              style={{
-                display: !videoRef.current?.srcObject ? "flex" : "none",
-              }}
-            >
-              <div className="text-white">Loading camera...</div>
-            </div>
-
-            {/* Overlay Product Image */}
-            <div className="absolute bottom-20 right-4 w-1/3 aspect-square">
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-contain"
-                style={{ opacity: 0.8 }}
-              />
-            </div>
-
-            {/* Controls */}
-            <div className="absolute top-4 right-4 space-x-4">
-              <Button
-                variant="outline"
-                className="bg-white"
-                onClick={stopCamera}
-              >
-                Close
-              </Button>
-            </div>
-
-            {/* Instructions */}
-            <div className="absolute top-4 left-4 bg-white/80 p-3 rounded-lg">
-              <p className="text-sm">
-                Move your phone to position the item in your space
-              </p>
-            </div>
-          </div>
-        </div>
+        <ARView
+          modelUrl="" // We're not using 3D models yet, just images
+          productImage={product.image}
+          onClose={() => {
+            stopCamera();
+            setShowCamera(false);
+          }}
+        />
       )}
 
       {/* Error Message */}
