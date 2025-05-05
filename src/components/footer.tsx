@@ -94,7 +94,7 @@ export default function Footer() {
                   href="https://marketplace.example.com/paintings"
                   className="text-white hover:text-white transition-colors"
                 >
-                  Paintings
+                  Sculptures
                 </a>
               </li>
               <li>
@@ -102,7 +102,7 @@ export default function Footer() {
                   href="https://marketplace.example.com/sculptures"
                   className="text-white hover:text-white transition-colors"
                 >
-                  Sculptures
+                  Decor
                 </a>
               </li>
               <li>
@@ -110,7 +110,7 @@ export default function Footer() {
                   href="https://marketplace.example.com/photography"
                   className="text-white hover:text-white transition-colors"
                 >
-                  Photography
+                  Furniture
                 </a>
               </li>
               <li>
@@ -118,7 +118,7 @@ export default function Footer() {
                   href="https://marketplace.example.com/digital-art"
                   className="text-white hover:text-white transition-colors"
                 >
-                  Digital Art
+                  Others
                 </a>
               </li>
             </ul>

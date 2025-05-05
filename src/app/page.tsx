@@ -111,17 +111,17 @@ export default function Home() {
               className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full"
             >
               <div
-                className="absolute top-0 right-0 w-[70%] sm:w-4/5 h-[70%] sm:h-4/5 bg-cover bg-center border-4 sm:border-8 border-white shadow-xl"
+                className="absolute top-0 right-0 w-[70%] sm:w-4/5 h-[70%] sm:h-4/5 bg-contain bg-no-repeat bg-center "
                 style={{
                   backgroundImage:
-                    "url('/images/loginart.jpg?height=600&width=800')",
+                    "url('/images/hangchair.jpg?height=600&width=800')",
                 }}
               />
               <div
-                className="absolute bottom-0 left-0 w-[50%] sm:w-3/5 h-[50%] sm:h-3/5 bg-cover bg-center border-4 sm:border-8 border-white shadow-xl"
+                className="absolute bottom-0 left-0 w-[50%] sm:w-3/5 h-[50%] sm:h-3/5 bg-contain bg-no-repeat bg-center "
                 style={{
                   backgroundImage:
-                    "url('/images/sampleart.jpg?height=500&width=700')",
+                    "url('/images/woodmirror.jpg?height=500&width=700')",
                 }}
               />
             </motion.div>

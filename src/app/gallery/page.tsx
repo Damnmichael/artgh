@@ -1,15 +1,24 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+// Define category colors
+const categoryColors: { [key: string]: string } = {
+  Furniture: "bg-[#F4F1DE] text-[#3D405B]",
+  Sculptures: "bg-[#81B29A] text-white",
+  Decor: "bg-[#E07A5F] text-white",
+  Others: "bg-[#3D405B] text-white",
+};
+
 const categories = [
   { id: "all", name: "All" },
-  { id: "paintings", name: "Paintings" },
-  { id: "sculptures", name: "Sculptures" },
-  { id: "photography", name: "Photography" },
-  { id: "digital", name: "Digital Art" },
+  { id: "Sculptures", name: "Sculptures" },
+  { id: "Decor", name: "Decor" },
+  { id: "Furniture", name: "Furniture" },
+  { id: "Others", name: "Others" },
 ];
 
 const artworks = [
@@ -19,7 +28,7 @@ const artworks = [
     artist: "Elena Moretti",
     price: "$1,200",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "paintings",
+    category: "Decor",
   },
   {
     id: 2,
@@ -27,7 +36,7 @@ const artworks = [
     artist: "Thomas Chen",
     price: "$950",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "paintings",
+    category: "Sculptures",
   },
   {
     id: 3,
@@ -35,7 +44,7 @@ const artworks = [
     artist: "Maya Johnson",
     price: "$1,500",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "photography",
+    category: "Decor",
   },
   {
     id: 4,
@@ -43,7 +52,7 @@ const artworks = [
     artist: "Robert Kline",
     price: "$2,800",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "sculptures",
+    category: "Sculptures",
   },
   {
     id: 5,
@@ -51,7 +60,7 @@ const artworks = [
     artist: "Sophia Lee",
     price: "$780",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "digital",
+    category: "Others",
   },
   {
     id: 6,
@@ -59,7 +68,7 @@ const artworks = [
     artist: "James Wilson",
     price: "$1,350",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "paintings",
+    category: "Furniture",
   },
   {
     id: 7,
@@ -67,7 +76,7 @@ const artworks = [
     artist: "Olivia Martinez",
     price: "$3,200",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "sculptures",
+    category: "Decor",
   },
   {
     id: 8,
@@ -75,7 +84,7 @@ const artworks = [
     artist: "Daniel Kim",
     price: "$1,100",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "photography",
+    category: "Furniture",
   },
   {
     id: 9,
@@ -83,7 +92,7 @@ const artworks = [
     artist: "Alex Turner",
     price: "$950",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "digital",
+    category: "Others",
   },
   {
     id: 10,
@@ -91,7 +100,7 @@ const artworks = [
     artist: "Natalie Wright",
     price: "$1,450",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "paintings",
+    category: "Decor",
   },
   {
     id: 11,
@@ -99,7 +108,7 @@ const artworks = [
     artist: "Christopher Lee",
     price: "$2,600",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "sculptures",
+    category: "Sculptures",
   },
   {
     id: 12,
@@ -107,7 +116,7 @@ const artworks = [
     artist: "Emma Davis",
     price: "$820",
     image: "/images/sampleart.jpg?height=600&width=500",
-    category: "digital",
+    category: "Others",
   },
 ];
 
@@ -144,9 +153,46 @@ export default function GalleryPage() {
 
           {/* All Artworks */}
           <TabsContent value="all" className="mt-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8">
               {artworks.map((artwork) => (
-                <ArtworkCard key={artwork.id} artwork={artwork} />
+                <div key={artwork.id} className="flex flex-col bg-white p-4">
+                  <div className="relative aspect-square bg-white mb-4 group">
+                    <Image
+                      src={artwork.image}
+                      alt={artwork.name}
+                      fill
+                      className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-base font-medium text-gray-900 truncate">
+                        {artwork.name}
+                      </div>
+                      <span
+                        className={`
+                        whitespace-nowrap px-2.5 py-1 text-xs font-medium rounded-full
+                        ${categoryColors[artwork.category]}
+                      `}
+                      >
+                        {artwork.category}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-900">{artwork.price}</p>
+
+                    <Link href={`/artwork/${artwork.id}`}>
+                      <Button
+                        variant="outline"
+                        className="w-full rounded-none border-black/30 text-black hover:border-2 hover:text-black"
+                      >
+                        <span className="flex items-center justify-center gap-2">
+                          View Details
+                        </span>
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               ))}
             </div>
           </TabsContent>
@@ -154,11 +200,51 @@ export default function GalleryPage() {
           {/* Category Tabs */}
           {categories.slice(1).map((category) => (
             <TabsContent key={category.id} value={category.id} className="mt-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8">
                 {artworks
                   .filter((artwork) => artwork.category === category.id)
                   .map((artwork) => (
-                    <ArtworkCard key={artwork.id} artwork={artwork} />
+                    <div
+                      key={artwork.id}
+                      className="flex flex-col bg-white p-4"
+                    >
+                      <div className="relative aspect-square bg-white mb-4 group">
+                        <Image
+                          src={artwork.image}
+                          alt={artwork.name}
+                          fill
+                          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="text-base font-medium text-gray-900 truncate">
+                            {artwork.name}
+                          </div>
+                          <span
+                            className={`
+                            whitespace-nowrap px-2.5 py-1 text-xs font-medium rounded-full
+                            ${categoryColors[artwork.category]}
+                          `}
+                          >
+                            {artwork.category}
+                          </span>
+                        </div>
+                        <p className="text-sm text-gray-900">{artwork.price}</p>
+
+                        <Link href={`/artwork/${artwork.id}`}>
+                          <Button
+                            variant="outline"
+                            className="w-full rounded-none border-black/30 text-black hover:border-2 hover:text-black"
+                          >
+                            <span className="flex items-center justify-center gap-2">
+                              View Details
+                            </span>
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
                   ))}
               </div>
             </TabsContent>

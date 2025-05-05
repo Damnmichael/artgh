@@ -7,7 +7,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  
+  CarouselPrevious,
+  CarouselNext,
 } from "@/components/ui/carousel";
 
 const testimonials = [
@@ -73,13 +74,19 @@ export default function TestimonialSlider() {
           </CarouselItem>
         ))}
       </CarouselContent>
-       {/* <div className="flex justify-center gap-2 mt-6">
-        <CarouselPrevious className="static transform-none rounded-none border-[#E07A5F] 
-        text-black hover:bg-[#E07A5F] hover:text-white" />
-        <CarouselNext className="static transform-none rounded-none border-[#E07A5F] text-black 
-        hover:bg-[#E07A5F] hover:text-white" />
-      </div> */}
-      <div className="flex justify-center items-center gap-2 mt-6">
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex justify-center gap-2 mt-6">
+        <CarouselPrevious
+          className="static transform-none rounded-none border-[#E07A5F] 
+          text-black hover:bg-[#E07A5F] hover:text-white"
+        />
+        <CarouselNext
+          className="static transform-none rounded-none border-[#E07A5F] text-black 
+          hover:bg-[#E07A5F] hover:text-white"
+        />
+      </div>
+      {/* Mobile Navigation */}
+      <div className="md:hidden flex justify-center items-center gap-2 mt-6">
         <span className="text-sm text-gray-500">Swipe to see more</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

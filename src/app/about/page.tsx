@@ -1,9 +1,5 @@
 import Image from "next/image";
 
-
-
-
-
 export default function AboutPage() {
   return (
     <div className="pt-24 pb-16">
@@ -26,18 +22,17 @@ export default function AboutPage() {
                 Our Story
               </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Artistry Gallery was founded with a singular vision: to create a
-                space where art transcends mere decoration to become a
-                meaningful part of people&apos;s lives. What began as a small
-                gallery in a historic downtown building has evolved into a
-                renowned platform for artistic expression and discovery.
+                Uzuri is a haven of accent furniture, elegant décor and
+                complementary art pieces. Inspired by nature and the rich
+                African culture, stories, and artistry. Uzuri offers a
+                beautifully curated collection of accent tables, comfortable
+                chairs and its complements to make your space feel welcoming and
+                cozy. Each item is thoughtfully crafted, reflecting the beauty
+                of skilled craftsmanship and the soul of our local artisans.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Our journey has been guided by a deep appreciation for
-                craftsmanship, creativity, and the transformative power of art.
-                We believe that every piece tells a story, evokes emotion, and
-                has the potential to create profound connections between the
-                artist and the viewer.
+                What began as a small gallery in at home has evolved into a
+                renowned platform for artistic expression and discovery.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Today, Artistry Gallery represents a diverse community of
@@ -146,7 +141,9 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-medium text-[#E07A5F]">{member.name}</h3>
+                <h3 className="text-xl font-medium text-[#E07A5F]">
+                  {member.name}
+                </h3>
                 <p className="text-gray-600">{member.title}</p>
               </div>
             ))}

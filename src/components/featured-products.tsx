@@ -1,10 +1,8 @@
 "use client";
 
-
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
 
 const products = [
   {
@@ -13,7 +11,7 @@ const products = [
     price: "GH₵300.00",
     image: "/images/sampleart.jpg",
     hasOptions: true,
-    category: "Canvas",
+    category: "Decor",
   },
   {
     id: 2,
@@ -21,29 +19,29 @@ const products = [
     price: "GH₵5,000.00",
     image: "/images/bedding.png",
     hasOptions: true,
-    category: "Bedding",
+    category: "Furniture",
   },
   {
     id: 3,
     name: "Zuri Chair",
     price: "GH₵1,433.00",
-    image: "/images/chair.png",
+    image: "/images/whitebackchair.png",
     hasOptions: false,
     category: "Furniture",
   },
   {
     id: 4,
-    name: "Morning Plant",
+    name: "Uzuri Table",
     price: "From GH₵700.00",
-    image: "/images/plants.png",
+    image: "/images/whitetable.png",
     hasOptions: true,
-    category: "Plants",
+    category: "Furniture",
   },
   {
     id: 5,
     name: "Cloudy Mirror",
     price: "GH₵350.00",
-    image: "/images/mirrors.png",
+    image: "/images/mirror3.png",
     hasOptions: false,
     category: "Decor",
   },
@@ -52,10 +50,10 @@ const products = [
 // Define category colors
 const categoryColors: { [key: string]: string } = {
   Furniture: "bg-[#F4F1DE] text-[#3D405B]",
-  Bedding: "bg-[#F2CC8F] text-[#3D405B]",
-  Plants: "bg-[#81B29A] text-white",
+
+  Sculptures: "bg-[#81B29A] text-white",
   Decor: "bg-[#E07A5F] text-white",
-  Canvas: "bg-[#3D405B] text-white",
+  Others: "bg-[#3D405B] text-white",
 };
 
 export default function FeaturedProducts() {

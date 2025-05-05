@@ -17,7 +17,7 @@ const products = [
     name: "Rae's Painting",
     price: "GH₵300.00",
     image: "/images/sampleart.jpg",
-    category: "Canvas",
+    category: "Decor",
     description:
       "A versatile DIY table that combines modern aesthetics with practical functionality. Perfect for both work and dining spaces.",
     details: [
@@ -40,7 +40,7 @@ const products = [
     name: "Open Space Bed",
     price: "GH₵5,000.00",
     image: "/images/bedding.png",
-    category: "Bedding",
+    category: "Furniture",
     description:
       "A versatile DIY table that combines modern aesthetics with practical functionality. Perfect for both work and dining spaces.",
     details: [
@@ -83,7 +83,7 @@ const products = [
   },
   {
     id: 4,
-    name: "Morning Plant",
+    name: "Uzuri Table",
     price: "GH₵700.00",
     image: "/images/plants.png",
     category: "Furniture",
