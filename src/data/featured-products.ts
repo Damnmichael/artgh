@@ -1,0 +1,42 @@
+export const products = [
+  {
+    id: 1,
+    name: "Rae's Painting",
+    price: "GH₵300.00",
+    image: "/images/sampleart.jpg",
+    hasOptions: true,
+    category: "Decor",
+  },
+  {
+    id: 2,
+    name: "Open Space Bed",
+    price: "GH₵5,000.00",
+    image: "/images/bedding.png",
+    hasOptions: true,
+    category: "Furniture",
+  },
+  {
+    id: 3,
+    name: "Zuri Chair",
+    price: "GH₵1,433.00",
+    image: "/images/whitebackchair.png",
+    hasOptions: false,
+    category: "Furniture",
+  },
+  {
+    id: 4,
+    name: "Uzuri Table",
+    price: "From GH₵700.00",
+    image: "/images/whitetable.png",
+    hasOptions: true,
+    category: "Furniture",
+  },
+  {
+    id: 5,
+    name: "Cloudy Mirror",
+    price: "GH₵350.00",
+    image: "/images/mirror3.png",
+    hasOptions: false,
+    category: "Decor",
+  },
+];

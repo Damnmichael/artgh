@@ -61,8 +61,8 @@ const products = [
   {
     id: 3,
     name: "Zuri Chair",
-    price: "GH₵1,103.00",
-    image: "/images/chair.png",
+    price: "GH₵1,433.00",
+    image: "/images/whitebackchair.png",
     category: "Furniture",
     description:
       "A versatile DIY table that combines modern aesthetics with practical functionality. Perfect for both work and dining spaces.",
@@ -85,7 +85,7 @@ const products = [
     id: 4,
     name: "Uzuri Table",
     price: "GH₵700.00",
-    image: "/images/plants.png",
+    image: "/images/whitetable.png",
     category: "Furniture",
     description:
       "Bring nature indoors with our curated plant room décor collection—designed to add a refreshing touch to your space. Whether you're styling a cozy nook or a vibrant living area, our plant-friendly pieces blend effortlessly with modern and boho aesthetics.",
@@ -108,7 +108,7 @@ const products = [
     id: 5,
     name: "Cloudy Mirror",
     price: "GH₵350.00",
-    image: "/images/mirrors.png",
+    image: "/images/mirror3.png",
     category: "Furniture",
     description:
       "A versatile DIY table that combines modern aesthetics with practical functionality. Perfect for both work and dining spaces.",

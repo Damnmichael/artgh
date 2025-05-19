@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { products } from "@/data/featured-products";
 
 // Define category colors
 const categoryColors: { [key: string]: string } = {
@@ -19,105 +19,6 @@ const categories = [
   { id: "Decor", name: "Decor" },
   { id: "Furniture", name: "Furniture" },
   { id: "Others", name: "Others" },
-];
-
-const artworks = [
-  {
-    id: 1,
-    name: "Abstract Harmony",
-    artist: "Elena Moretti",
-    price: "$1,200",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Decor",
-  },
-  {
-    id: 2,
-    name: "Serene Landscape",
-    artist: "Thomas Chen",
-    price: "$950",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Sculptures",
-  },
-  {
-    id: 3,
-    name: "Urban Reflections",
-    artist: "Maya Johnson",
-    price: "$1,500",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Decor",
-  },
-  {
-    id: 4,
-    name: "Bronze Elegance",
-    artist: "Robert Kline",
-    price: "$2,800",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Sculptures",
-  },
-  {
-    id: 5,
-    name: "Digital Dreams",
-    artist: "Sophia Lee",
-    price: "$780",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Others",
-  },
-  {
-    id: 6,
-    name: "Ethereal Whispers",
-    artist: "James Wilson",
-    price: "$1,350",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Furniture",
-  },
-  {
-    id: 7,
-    name: "Marble Grace",
-    artist: "Olivia Martinez",
-    price: "$3,200",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Decor",
-  },
-  {
-    id: 8,
-    name: "City Lights",
-    artist: "Daniel Kim",
-    price: "$1,100",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Furniture",
-  },
-  {
-    id: 9,
-    name: "Virtual Reality",
-    artist: "Alex Turner",
-    price: "$950",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Others",
-  },
-  {
-    id: 10,
-    name: "Ocean Memories",
-    artist: "Natalie Wright",
-    price: "$1,450",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Decor",
-  },
-  {
-    id: 11,
-    name: "Bronze Dancer",
-    artist: "Christopher Lee",
-    price: "$2,600",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Sculptures",
-  },
-  {
-    id: 12,
-    name: "Neon Futures",
-    artist: "Emma Davis",
-    price: "$820",
-    image: "/images/sampleart.jpg?height=600&width=500",
-    category: "Others",
-  },
 ];
 
 export default function GalleryPage() {
@@ -151,104 +52,121 @@ export default function GalleryPage() {
             </TabsList>
           </div>
 
-          {/* All Artworks */}
+          {/* All Products */}
           <TabsContent value="all" className="mt-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8">
-              {artworks.map((artwork) => (
-                <div key={artwork.id} className="flex flex-col bg-white p-4">
-                  <div className="relative aspect-square bg-white mb-4 group">
-                    <Image
-                      src={artwork.image}
-                      alt={artwork.name}
-                      fill
-                      className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="text-base font-medium text-gray-900 truncate">
-                        {artwork.name}
-                      </div>
-                      <span
-                        className={`
-                        whitespace-nowrap px-2.5 py-1 text-xs font-medium rounded-full
-                        ${categoryColors[artwork.category]}
-                      `}
-                      >
-                        {artwork.category}
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-900">{artwork.price}</p>
-
-                    <Link href={`/artwork/${artwork.id}`}>
-                      <Button
-                        variant="outline"
-                        className="w-full rounded-none border-black/30 text-black hover:border-2 hover:text-black"
-                      >
-                        <span className="flex items-center justify-center gap-2">
-                          View Details
-                        </span>
-                      </Button>
-                    </Link>
-                  </div>
+              {products.length === 0 ? (
+                <div className="col-span-full text-center text-gray-500 py-8">
+                  No contents here
                 </div>
-              ))}
+              ) : (
+                products.map((product) => (
+                  <div key={product.id} className="flex flex-col bg-white p-4">
+                    <div className="relative aspect-square bg-white mb-4 group">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="text-base font-medium text-gray-900 truncate">
+                          {product.name}
+                        </div>
+                        <span
+                          className={`
+                            whitespace-nowrap px-2.5 py-1 text-xs font-medium rounded-full
+                            ${categoryColors[product.category]}
+                          `}
+                        >
+                          {product.category}
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-900">{product.price}</p>
+                      <Link href={`/product/${product.id}`}>
+                        <Button
+                          variant="outline"
+                          className="w-full rounded-none border-black/30 text-black hover:border-2 hover:text-black"
+                        >
+                          <span className="flex items-center justify-center gap-2">
+                            View Details
+                          </span>
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </TabsContent>
 
           {/* Category Tabs */}
-          {categories.slice(1).map((category) => (
-            <TabsContent key={category.id} value={category.id} className="mt-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8">
-                {artworks
-                  .filter((artwork) => artwork.category === category.id)
-                  .map((artwork) => (
-                    <div
-                      key={artwork.id}
-                      className="flex flex-col bg-white p-4"
-                    >
-                      <div className="relative aspect-square bg-white mb-4 group">
-                        <Image
-                          src={artwork.image}
-                          alt={artwork.name}
-                          fill
-                          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between gap-2">
-                          <div className="text-base font-medium text-gray-900 truncate">
-                            {artwork.name}
-                          </div>
-                          <span
-                            className={`
-                            whitespace-nowrap px-2.5 py-1 text-xs font-medium rounded-full
-                            ${categoryColors[artwork.category]}
-                          `}
-                          >
-                            {artwork.category}
-                          </span>
-                        </div>
-                        <p className="text-sm text-gray-900">{artwork.price}</p>
-
-                        <Link href={`/artwork/${artwork.id}`}>
-                          <Button
-                            variant="outline"
-                            className="w-full rounded-none border-black/30 text-black hover:border-2 hover:text-black"
-                          >
-                            <span className="flex items-center justify-center gap-2">
-                              View Details
-                            </span>
-                          </Button>
-                        </Link>
-                      </div>
+          {categories.slice(1).map((category) => {
+            const filteredProducts = products.filter(
+              (product) => product.category === category.id
+            );
+            return (
+              <TabsContent
+                key={category.id}
+                value={category.id}
+                className="mt-0"
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-8">
+                  {filteredProducts.length === 0 ? (
+                    <div className="col-span-full text-center text-gray-500 py-8">
+                      No contents here
                     </div>
-                  ))}
-              </div>
-            </TabsContent>
-          ))}
+                  ) : (
+                    filteredProducts.map((product) => (
+                      <div
+                        key={product.id}
+                        className="flex flex-col bg-white p-4"
+                      >
+                        <div className="relative aspect-square bg-white mb-4 group">
+                          <Image
+                            src={product.image}
+                            alt={product.name}
+                            fill
+                            className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="text-base font-medium text-gray-900 truncate">
+                              {product.name}
+                            </div>
+                            <span
+                              className={`
+                                whitespace-nowrap px-2.5 py-1 text-xs font-medium rounded-full
+                                ${categoryColors[product.category]}
+                              `}
+                            >
+                              {product.category}
+                            </span>
+                          </div>
+                          <p className="text-sm text-gray-900">
+                            {product.price}
+                          </p>
+                          <Link href={`/product/${product.id}`}>
+                            <Button
+                              variant="outline"
+                              className="w-full rounded-none border-black/30 text-black hover:border-2 hover:text-black"
+                            >
+                              <span className="flex items-center justify-center gap-2">
+                                View Details
+                              </span>
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </TabsContent>
+            );
+          })}
         </Tabs>
 
         {/* Call to Action */}
