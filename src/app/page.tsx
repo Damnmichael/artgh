@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
@@ -21,14 +21,14 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
             backgroundImage:
-              "url('/images/loginart.jpg?height=1080&width=1920')",
+              "url('/images/uzuri-bench.png?height=1080&width=1920')",
           }}
         />
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="container relative z-20 mx-auto px-4 text-center"
+          className="container relative z-20 mx-auto px-4 text-center mt-auto pb-48"
         >
           <h1 className="text-4xl md:text-6xl font-serif font-light text-white mb-6">
             Welcome To The Uzuri Space
@@ -82,13 +82,13 @@ export default function Home() {
               <h2 className="text-3xl text-[#E07A5F] md:text-4xl font-serif mb-6">
                 Our Artistic Vision
               </h2>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-6 leading-relaxed text-xl md:text-xl">
                 We curate exceptional pieces that blend traditional
                 craftsmanship with contemporary aesthetics. Each artwork in our
                 collection is carefully selected for its unique character and
                 artistic merit.
               </p>
-              <p className="text-gray-700 mb-8 leading-relaxed">
+              <p className="text-gray-700 mb-8 leading-relaxed text-xl md:text-xl">
                 Our mission is to connect discerning collectors with
                 extraordinary artists, creating a platform where art transcends
                 mere decoration to become a meaningful part of your life.
@@ -111,17 +111,9 @@ export default function Home() {
               className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full"
             >
               <div
-                className="absolute top-0 right-0 w-[70%] sm:w-4/5 h-[70%] sm:h-4/5 bg-contain bg-no-repeat bg-center "
+                className="absolute inset-0 bg-contain bg-no-repeat bg-center"
                 style={{
-                  backgroundImage:
-                    "url('/images/hangchair.jpg?height=600&width=800')",
-                }}
-              />
-              <div
-                className="absolute bottom-0 left-0 w-[50%] sm:w-3/5 h-[50%] sm:h-3/5 bg-contain bg-no-repeat bg-center "
-                style={{
-                  backgroundImage:
-                    "url('/images/woodmirror.jpg?height=500&width=700')",
+                  backgroundImage: "url('/images/ZUUU.png')",
                 }}
               />
             </motion.div>
@@ -135,7 +127,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-24 bg-stone-50"
+        className="py-24 bg-white"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">

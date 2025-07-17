@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -74,14 +75,18 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-serif font-medium">
-            <span
-              className={
-                isScrolled || pathname !== "/" ? "text-[#E07A5F]" : "text-white"
+          <Link href="/" className="flex items-center">
+            <Image
+              src={
+                isScrolled || pathname !== "/"
+                  ? "/images/sunset-nbg.svg"
+                  : "/images/uzuri-white.svg"
               }
-            >
-              Uzuri
-            </span>
+              alt="Uzuri"
+              width={120}
+              height={40}
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -155,9 +160,13 @@ export default function Header() {
                   className="flex items-center justify-between mb-8"
                   variants={itemVariants}
                 >
-                  <span className="text-2xl font-serif font-medium text-[#E07A5F]">
-                    Uzuri
-                  </span>
+                  <Image
+                    src="/images/sunset-nbg.svg"
+                    alt="Uzuri"
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto"
+                  />
                 </motion.div>
                 <nav className="flex flex-col space-y-6">
                   {navigation.map((item) => (
